@@ -8,7 +8,7 @@ $file = "$storageDir\temp.txt"
 $webclient.DownloadFile($url,$file)
 $html = Get-Content "C:\downloads\temp.txt"
 
-#find image url
+#find image url by recognizing the pattern
 $start = "id='header-img' src=`""
 $end = "`" width"
 $html -match "$start(?<content>.*)$end"
@@ -19,5 +19,5 @@ $imgfile = "$storageDir\alien.png"
 $webclient.DownloadFile($imgurl,$imgfile)
 
 Remove-Item c:\downloads\temp.txt
-start C:\downloads
+
 
